@@ -1,7 +1,10 @@
 # Info
-This is my personal configuration for my home server.
+This is my personal Homepage configuration for my home media server.
 
-All links (indicated by https://localhost/) and api keys (indicated by apikeyapikeyapikey) will need to be replaced with your own for it too look nice, unless you don't care about that functionality and you can just remove those lines.
+All links (indicated by https://localhost/) and 
+api keys (indicated by apikeyapikeyapikey) will need 
+to be replaced with your own for it too look nice, 
+unless you don't care about that functionality and you can just remove those lines.
 
 # Pictures
 
