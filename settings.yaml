@@ -1,0 +1,61 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+providers:    # choose one
+  openweathermap: apikeyapikeyapikey    # choose this
+  weatherapi: weatherapiapikey          # or this
+
+background:
+  image: https://example.com/   # replace with your image url
+  blur: none                # options: "none", "sm", "md", "lg", "xl", incompatible with card blur
+  opacity: 100              # 0 - 100
+  saturate: 100             # options: "0", "50", "100", "150", "200"
+  brightness: 75            # options: "0", "50", "75", "90", "95", "100", "105", "110", "125", "150", "200"
+
+title: "Homepage"           # name of the tab that will appear in browser
+
+headerStyle: clean          # options: "underlined", "boxed", "clean", "boxedWidgets"
+
+iconStyle: mdi-XXXX         # options: "theme"  default: "mdi-XXXX"
+
+statusStyle: basic          # options: "dot", "basic"
+
+showStats: false            # shows stats of docker containers like mem and cpu usage
+
+cardBlur: "xl"              # options: "none", "sm", "md", "lg", "xl", incompatible with background blur
+
+color: emerald              # chooses color and disables selectable color palette at bottom of screen
+
+disableCollapse: true       # make it so you can't collapse sections of apps
+
+useEqualHeights: true       # make all cards the same height
+
+layout:
+  
+  Media:                    # name of section of apps
+    tab: Apps               # what tab to put the apps in
+    style: row              # options: "column", "row"
+    columns: 4              # only works if "style" is row
+
+  Main Server:
+    tab: Server
+    style: row
+    columns: 2
+
+  Raspberry Pi Server:
+    tab: Server
+    style: column
+
+  Resources:
+    tab: Server
+    style: row
+    columns: 2
+
+  Websites:                 # bookmarks on Server tab
+    tab: Server
+
+  Bookmarks:                # bookmarks on Apps tab
+    tab: Apps
+    style: row
+    columns: 2

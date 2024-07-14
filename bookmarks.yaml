@@ -1,0 +1,41 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/bookmarks
+
+- Bookmarks:                                                  # category of bookmarks
+    - VirusTotal:                                             # name of bookmark
+        - abbr: VT                                            # abbreviation if icon not found
+          href: https://www.virustotal.com/gui/home/upload    # link to site
+          icon: si-virustotal                                 # icon using mdi-XX or si-XX https://gethomepage.dev/latest/configs/services/#icons
+          description: Scan Files for Viruses                 # description of link
+
+    - Sports Streams:
+        - abbr: SP
+          icon: mdi-football
+          href: https://example.com/
+          description: Links to Live Sports
+
+    - VGM:
+        - abbr: KH
+          href: https://example.com/
+          icon: si-nintendogamecube
+          description: Download Video Game Music
+
+- Websites:                                                   # another category of bookmarks          
+    - Usenet1:                                
+        - abbr: NP                              
+          href: https://example.com/
+          icon: mdi-download-circle-outline
+          description: Usenet Indexer           
+
+    - Usenet2:
+        - abbr: NH
+          href: https://example.com/
+          icon: mdi-map-search-outline
+          description: Usenet Provider
+
+    - Homepage:
+        - abbr: HP
+          href: https://gethomepage.dev/latest
+          icon: si-homepage
+          description: Homepage Docs

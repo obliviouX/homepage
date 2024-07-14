@@ -1,0 +1,182 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- "Media":
+    - Jellyfin:
+        href: http://localhost/                     # replace this with your jellyfin url
+        description: Movies, Music, and Shows
+        icon: jellyfin.png
+        server: local
+        container: jellyfin
+        showStats: false
+        widget:
+          type: jellyfin
+          fields: ["movies", "songs"]
+          url: http://localhost/
+          key: apikeyapikeyapikeyapikey             # api key goes here
+          enableBlocks: true                        # optional, defaults to false
+          enableNowPlaying: false                   # optional, defaults to true
+
+    - Jellyseerr:
+        href: http://localhost/
+        description: Request Movies and Shows
+        icon: jellyseerr.png
+        server: local
+        container: jellyseerr
+        showStats: false
+        widget:
+          type: jellyseerr
+          url: http://localhost/
+          key: apikeyapikeyapikeyapikey
+
+    - BookStack:
+        href: http://localhost/
+        description: Home Wiki
+        icon: bookstack.png
+        server: local
+        container: bookstack
+        showStats: false
+
+    - Photoview:
+        href: http://localhost/
+        description: Photo Library
+        icon: photoview.png
+        server: local
+        container: photoview-db-1
+        showStats: false
+
+- "Main Server":
+    - Portainer:
+        href: http://localhost/
+        description: Docker Container Management
+        icon: portainer.png
+        widget:
+          type: portainer
+          env: 2
+          fields: ["running", "stopped", "total"]
+          url: http://localhost/
+          key: apikeyapikeyapikeyapikey
+
+    - SABnzbd:
+        href: http://localhost/
+        description: Usenet Downloader
+        icon: sabnzbd.png
+        server: local
+        container: sabnzbd
+        showStats: false
+        widget:
+          type: sabnzbd
+          url: http://localhost/
+          key: apikeyapikeyapikeyapikey
+
+    - qBittorrent:
+        href: http://localhost/
+        description: Torrent Downloader
+        icon: qbittorrent.png
+        server: local
+        container: qbittorrent
+        showStats: false
+
+    - Glances:                              # may need to include username and password if you set it up that way
+        href: http://localhost/
+        description: Resource Monitoring
+        icon: glances.png
+        server: local
+        container: glances-monitoring-1
+        showStats: false
+
+    - Sonarr:
+        href: http://localhost/
+        description: Download Shows
+        icon: sonarr.png
+        server: local
+        container: sonarr
+        showStats: false
+
+    - Lidarr:
+        href: http://localhost/
+        description: Download Music
+        icon: lidarr.png
+        server: local
+        container: lidarr
+        showStats: false
+
+    - Radarr:
+        href: http://localhost/
+        description: Download Movies
+        icon: radarr.png
+        server: local
+        container: radarr
+        showStats: false
+
+    - Prowlarr:
+        href: http://localhost/
+        description: Indexer Manager
+        icon: prowlarr.png
+        server: local
+        container: prowlarr
+        showStats: false
+
+#    - Pi-hole:
+#        href: http://localhost/
+#        description: Ad and Tracker Blocking
+#        icon: pi-hole.png
+
+- "Raspberry Pi Server":
+    - Portainer:
+        href: http://localhost/
+        description: Docker Container Management
+        icon: portainer.png
+
+    - Pi-hole:
+        href: http://localhost/
+        description: Ad and Tracker Blocking
+        icon: pi-hole.png
+        widget:
+          type: pihole
+          url: http://localhost/
+          key: apikeyapikeyapikeyapikey
+
+- Resources:        # uses Glances docker container
+    - "CPU":
+        widget:
+          type: glances
+          version: 4                    # may need to change versions if not using latest glances
+          url: http://localhost/
+          metric: cpu
+          chart: false
+    - "Network Usage":
+        widget:
+          type: glances
+          version: 4
+          url: http://localhost/
+          metric: network:eno2          # probably need to change this for your network
+          chart: true
+#    - "Storage":
+#        widget:
+#          type: glances
+#          version: 4
+#          url: http://localhost/
+#          metric: fs:/mnt/drive
+#          chart: true
+#    - GPU:
+#        widget:
+#          type: glances
+#          version: 4
+#          url: http://localhost/
+#          metric: gpu:0
+#          chart: false
+#    - RAM:
+#        widget:
+#          type: glances
+#          version: 4
+#          url: http://localhost/
+#          metric: memory
+#          chart: false
+#    - Processes:
+#        widget:
+#          type: glances
+#          url: http://localhost/
+#          metric: process
+

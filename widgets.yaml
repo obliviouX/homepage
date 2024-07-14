@@ -1,0 +1,50 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/service-widgets
+
+# https://github.com/gethomepage/homepage/blob/main/docs/widgets/info/datetime.md
+
+
+####################################################
+#
+# ORDER MATTERS HERE
+# can rearrange order of the widgets here to decide
+# where the widgets below will show up on the page
+#
+####################################################
+
+#- resources:
+#    cpu: true
+#    memory: true
+#    disk: /
+#    label: "Raspberry Pi"
+#    cputemp: true
+#    uptime: true
+#    units: imperial
+
+#- search:
+#    provider: duckduckgo
+#    target: _blank
+
+- datetime:
+    text_size: md
+    format:
+      # timeStyle: short
+      dateStyle: short
+
+- openweathermap:
+    label: City                 # optional
+    latitude: 00.00             # insert you latitude
+    longitude: 00.00            # insert your longitude
+    units: imperial             # or imperial
+    provider: openweathermap
+    # apiKey: youropenweathermapkey # required only if not using provider, this reveals api key in requests
+    cache: 30                   # Time in minutes to cache API responses, to stay within limits
+
+- logo:
+    icon: si-starship           # optional, default is homepage logo
+    # icon: /images/starship.svg # local path to image if set up in docker file
+
+- greeting:
+    text_size: md
+    text: Hello
